@@ -129,3 +129,12 @@ h1,
 .card-body i {
   font-size: 2rem;
 }
+
+/*FOOTER*/
+.code-link {
+  text-align: center;
+}
+.cl {
+  text-decoration: none;
+  color: var(--main-txt-color);
+}
