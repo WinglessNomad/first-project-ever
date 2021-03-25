@@ -1,0 +1,131 @@
+/*GENERAL STYLES*/
+:root {
+  --main-bg-color: #f1f3f8;
+  --main-txt-color: #393b44;
+}
+/*DON'T FORGET TO MAKE IT RESPONSIVE, IT WRAPS WEIRDLY*/
+body {
+  color: var(--main-txt-color);
+  font-family: "Gruppo", cursive;
+  background-color: #f6f5f5;
+}
+.container {
+  box-sizing: border-box;
+  width: 70%;
+  max-width: 100%;
+  margin-top: 2rem;
+  border: 1px solid var(--main-txt-color);
+  border-radius: 10px;
+  background-color: var(--main-bg-color);
+}
+
+/*HEADER*/
+header {
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+nav {
+  line-height: 0;
+  background-color: var(--main-bg-color);
+}
+#date {
+  text-decoration: none;
+  color: var(--main-txt-color);
+  font-size: 1.5rem;
+  pointer-events: none;
+}
+.d-flex input {
+  padding: 3px 6px;
+}
+
+#globe {
+  font-size: 1.5rem;
+  padding: 5px;
+}
+
+.cels-vs-fahr {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+  position: relative;
+}
+
+.celsius,
+.fahrenheit {
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--main-txt-color);
+}
+
+.celsius:hover,
+.celsius:focus,
+.fahrenheit:hover,
+.fahrenheit:focus {
+  /*when selected, will change into hover state and stay that way*/
+  font-weight: bolder;
+  font-size: 3rem;
+  cursor: pointer;
+  color: var(--main-txt-color);
+}
+
+/*MAIN*/
+.main {
+  /*make responsive with @media(min/max-width:px) {}*/
+  display: flex;
+  justify-content: space-around;
+  height: 200px;
+}
+
+.current-city {
+  width: 40%;
+}
+h1,
+#searched-city {
+  font-family: "Chilanka", cursive;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.current-weather {
+  width: 40%;
+}
+
+#main-weather {
+  /*find an animation instead of an icon*/
+  display: block;
+  font-size: 10rem;
+  text-align: center;
+}
+
+.current-temp {
+  width: 20%;
+  text-align: right;
+  font-size: 3rem;
+  font-family: "Chilanka", cursive;
+  flex-wrap: nowrap;
+  color: var(--main-txt-color);
+}
+
+.current-temp h2 {
+  font-size: 3rem;
+  font-family: "Chilanka", cursive;
+  flex-wrap: nowrap;
+  color: var(--main-txt-color);
+}
+
+/*CARDS*/
+.card {
+  text-align: center;
+  margin-bottom: 1rem;
+  background-color: #d3e0ea;
+}
+
+.card-title {
+  font-size: 1rem;
+}
+
+.card-body i {
+  font-size: 2rem;
+}
