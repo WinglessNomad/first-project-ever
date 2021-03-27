@@ -82,6 +82,11 @@ nav {
 .current-city {
   width: 40%;
 }
+
+.current-info::first-letter {
+  text-transform: capitalize;
+}
+
 h1,
 #searched-city {
   font-family: "Chilanka", cursive;
@@ -100,6 +105,7 @@ h1,
 }
 
 .current-temp {
+  display: inline-flex;
   width: 20%;
   text-align: right;
   font-size: 3rem;

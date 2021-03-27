@@ -24,7 +24,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="src/styles.css" />
 
     <title>Weather App</title>
   </head>
@@ -43,7 +43,6 @@
                 aria-label="Search"
                 id="search-engine"
               />
-
               <button class="btn" type="submit">
                 <i class="fas fa-globe" id="globe"></i>
               </button>
@@ -51,29 +50,26 @@
                 <i class="fas fa-map-pin" id="pin"></i>
               </button>
             </form>
-            <div class="cels-vs-fahr">
-              <!--this will change when selected, bold + font size-->
-              <div><a href="#" class="celsius">°C</a></div>
-              <div><a href="#" class="fahrenheit">°F</a></div>
-            </div>
           </div>
         </nav>
       </header>
       <main>
         <div class="main">
           <div class="current-city">
-            <div class="city" id="searched-city"><h1>Current city</h1></div>
+            <div class="city" id="searched-city"><h1></h1></div>
             <div class="current-info">
-              <p>Short description of current weather in selected city</p>
+              <p class="current-description"></p>
+              <p class="feels-like"></p>
+              <p class="wind-speed"></p>
             </div>
           </div>
           <div class="current-weather">
-            <div class="weather-image">
-              <i class="bi bi-cloud-sun" id="main-weather"></i>
-            </div>
+            <div class="weather-image"></div>
           </div>
-          <div class="current-temp">
-            <h2>25 °C</h2>
+          <div class="current-t">
+            <div><h2 class="current-temp"></h2></div>
+            <div><a href="#" class="celsius">°C</a></div>
+            <div><a href="#" class="fahrenheit">°F</a></div>
           </div>
         </div>
         <div class="forecast"><h3>Forecast</h3></div>
@@ -82,50 +78,30 @@
           <div class="col">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">MON</h5>
-                <i class="fas fa-cloud-rain"></i>
-                <p class="card-temp">9 °C</p>
-                <p class="card-text">Rainy</p>
+                <h5 class="card-title"></h5>
+                <div class="forecast-icon-1"></div>
+                <p class="card-temp"><span> °C</span></p>
+                <p class="forecast-info-1"></p>
               </div>
             </div>
           </div>
           <div class="col">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">TUE</h5>
-                <i class="fas fa-cloud-sun"></i>
-                <p class="card-temp">9 °C</p>
-                <p class="card-text">Rainy</p>
+                <h5 class="card-title"></h5>
+                <div class="forecast-icon-2"></div>
+                <p class="card-temp"><span> °C</span></p>
+                <p class="forecast-info-2"></p>
               </div>
             </div>
           </div>
           <div class="col">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">WED</h5>
-                <i class="fas fa-cloud-showers-heavy"></i>
-                <p class="card-temp">9 °C</p>
-                <p class="card-text">Rainy</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">THU</h5>
-                <i class="fas fa-sun"></i>
-                <p class="card-temp">9 °C</p>
-                <p class="card-text">Rainy</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">FRI</h5>
-                <i class="far fa-snowflake"></i>
-                <p class="card-temp">9 °C</p>
-                <p class="card-text">Rainy</p>
+                <h5 class="card-title"></h5>
+                <div class="forecast-icon-3"></div>
+                <p class="card-temp"><span> °C</span></p>
+                <p class="forecast-info-3"></p>
               </div>
             </div>
           </div>
@@ -145,6 +121,6 @@
         </p>
       </div>
     </footer>
-    <script src="index.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
