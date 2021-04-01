@@ -2,18 +2,20 @@
 :root {
   --main-bg-color: #f1f3f8;
   --main-txt-color: #393b44;
+  box-sizing: border-box;
 }
 /*DON'T FORGET TO MAKE IT RESPONSIVE, IT WRAPS WEIRDLY*/
 body {
   color: var(--main-txt-color);
   font-family: "Gruppo", cursive;
   background-color: #f6f5f5;
+  line-height: 1;
 }
+
 .container {
-  box-sizing: border-box;
-  width: 70%;
+  width: 450px;
   max-width: 100%;
-  margin-top: 2rem;
+  margin: 5px auto;
   border: 1px solid var(--main-txt-color);
   border-radius: 10px;
   background-color: var(--main-bg-color);
@@ -23,18 +25,27 @@ body {
 header {
   padding: 1rem;
   margin: 0 auto;
+  border-radius: 10px;
 }
 
 nav {
   line-height: 0;
   background-color: var(--main-bg-color);
+  box-shadow: 0px 5px 10px -4px rgba(93, 91, 96, 0.9);
 }
 #date {
   text-decoration: none;
   color: var(--main-txt-color);
   font-size: 1.5rem;
   pointer-events: none;
+  text-align: right;
 }
+
+form {
+  text-align: center;
+  justify-content: space-around;
+}
+
 .d-flex input {
   padding: 3px 6px;
 }
@@ -42,104 +53,192 @@ nav {
 #globe {
   font-size: 1.5rem;
   padding: 5px;
+  margin-right: 0.5rem;
 }
 
-.cels-vs-fahr {
-  display: flex;
-  justify-content: space-around;
-  padding: 0.5rem;
-  position: relative;
-}
-
-.celsius,
-.fahrenheit {
-  padding: 1rem;
-  font-size: 2rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: var(--main-txt-color);
-}
-
-.celsius:hover,
-.celsius:focus,
-.fahrenheit:hover,
-.fahrenheit:focus {
-  /*when selected, will change into hover state and stay that way*/
-  font-weight: bolder;
-  font-size: 3rem;
-  cursor: pointer;
-  color: var(--main-txt-color);
+#pin {
+  font-size: 1.5rem;
+  padding: 5px;
 }
 
 /*MAIN*/
 .main {
-  /*make responsive with @media(min/max-width:px) {}*/
-  display: flex;
-  justify-content: space-around;
-  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 10px;
+  place-content: center;
 }
 
 .current-city {
-  width: 40%;
+  display: grid;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  justify-self: left;
 }
 
-.current-info::first-letter {
+#searched-city {
+  font-size: 3rem;
+  font-family: "Chilanka", cursive;
+  font-weight: bold;
+}
+
+.current-description::first-letter {
   text-transform: capitalize;
 }
 
-h1,
-#searched-city {
-  font-family: "Chilanka", cursive;
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-.current-weather {
-  width: 40%;
-}
-
-#main-weather {
-  /*find an animation instead of an icon*/
-  display: block;
-  font-size: 10rem;
-  text-align: center;
-}
-
-.current-temp {
+.feels-like,
+.wind-speed {
   display: inline-flex;
-  width: 20%;
-  text-align: right;
-  font-size: 3rem;
-  font-family: "Chilanka", cursive;
-  flex-wrap: nowrap;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+
+.current-weather {
+  display: grid;
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  justify-self: right;
+}
+
+.current-t {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: right;
+  align-self: start;
+  gap: 10px;
+}
+
+#current-temp {
+  font-size: 4rem;
+}
+
+.celsius,
+.fahrenheit {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
   color: var(--main-txt-color);
+  display: inline-block;
+  transition: all 200ms ease;
 }
 
-.current-temp h2 {
-  font-size: 3rem;
-  font-family: "Chilanka", cursive;
-  flex-wrap: nowrap;
-  color: var(--main-txt-color);
+.celsius:focus,
+.fahrenheit:focus {
+  outline: 1px var(--main-txt-color);
 }
 
-/*CARDS*/
-.card {
-  text-align: center;
-  margin-bottom: 1rem;
-  background-color: #d3e0ea;
-}
-
-.card-title {
-  font-size: 1rem;
-}
-
-.card-body i {
+.celsius:hover,
+.fahrenheit:hover {
   font-size: 2rem;
+  font-weight: bold;
+  color: var(--main-txt-color);
+}
+
+/*FORECAST*/
+
+#future {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  justify-content: space-around;
+}
+
+.forecast-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#forecast-1 {
+  grid-column: 1;
+  grid-row: 1;
+  align-items: center;
+  justify-items: center;
+}
+
+.forecast-temp-1 {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+  align-self: center;
+}
+
+.forecast-icon-1 {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+}
+
+.forecast-description-1 {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+}
+
+#forecast-2 {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.forecast-temp-2 {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+  align-self: center;
+}
+
+.forecast-icon-2 {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+}
+
+.forecast-description-2 {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+}
+
+#forecast-3 {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.forecast-temp-3 {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+  align-self: center;
+}
+
+.forecast-icon-3 {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  align-self: center;
+}
+
+.forecast-description-3 {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
 }
 
 /*FOOTER*/
 .code-link {
   text-align: center;
+  font-family: "Chilanka", cursive;
 }
+
 .cl {
   text-decoration: none;
   color: var(--main-txt-color);

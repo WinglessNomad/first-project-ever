@@ -55,84 +55,48 @@
             <div id="searched-city"><h1 class="city"></h1></div>
             <div class="current-info">
               <p class="current-description"></p>
-              <div>
-                Feels like
+              <div class="real-feel">
+                Feels like:
                 <p class="feels-like"></p>
-                <span>°</span>
               </div>
-              <div>
-                Wind speed
-                <p class="wind-speed"><span class="unit">km/h</span></p>
+              <div class="wind">
+                Wind speed:
+                <p class="wind-speed"></p>
               </div>
             </div>
           </div>
           <div class="current-weather">
             <img src="" alt="weather icon" id="icon" />
           </div>
+          <br />
           <div class="current-t">
+            <a href="#" class="celsius">°C</a>
+            <a href="#" class="fahrenheit">°F</a>
             <div><h2 id="current-temp"></h2></div>
-            <div><a href="#" class="celsius">°C</a></div>
-            <div><a href="#" class="fahrenheit">°F</a></div>
           </div>
         </div>
-        <div class="forecast"><h3>Forecast</h3></div>
-
-        <div class="row align-items-center">
-          <div class="col" id="forecast-1">
+        <div class="forecast">
+          <h3>Forecast</h3>
+          <p>Next three days:</p>
+        </div>
+        <!--predicting the future-->
+        <div class="row align-items-center" id="future">
+          <div class="col forecast-box" id="forecast-1">
             <h3 class="forecast-temp-1"></h3>
-            <span class="sign">°</span>
             <img src="" alt="" class="forecast-icon-1" />
             <p class="forecast-description-1"></p>
           </div>
-          <div class="col" id="forecast-2">
-            <span class="sign">°</span>
+          <div class="col forecast-box" id="forecast-2">
             <h3 class="forecast-temp-2"></h3>
-            <span class="sign">°</span>
             <img src="" alt="" class="forecast-icon-2" />
             <p class="forecast-description-2"></p>
           </div>
-          <div class="col" id="forecast-3">
-            <span class="sign">°</span>
+          <div class="col forecast-box" id="forecast-3">
             <h3 class="forecast-temp-3"></h3>
-            <span class="sign">°</span>
             <img src="" alt="" class="forecast-icon-3" />
             <p class="forecast-description-3"></p>
           </div>
         </div>
-
-        <!--predicting the future cards
-        <div class="row row-cols-1 row-cols-md-5 g-4">
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title"></h5>
-                <div class="forecast-icon-1"></div>
-                <p class="card-temp-1"><span> °C</span></p>
-                <p class="forecast-info-1"></p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-temp-2"></h5>
-                <div class="forecast-icon-2"></div>
-                <p class="card-temp"><span> °C</span></p>
-                <p class="forecast-info-2"></p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-temp-3"></h5>
-                <div class="forecast-icon-3"></div>
-                <p class="card-temp"><span> °C</span></p>
-                <p class="forecast-info-3"></p>
-              </div>
-            </div>
-          </div>
-        </div>-->
       </main>
     </div>
     <footer>
@@ -144,6 +108,10 @@
             target="_blank"
             >Open-source code</a
           >
+          for
+          <a href="https://www.shecodes.io/" class="cl" target="_blank">
+            SheCodes
+          </a>
           by Nina B
         </p>
       </div>
