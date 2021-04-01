@@ -40,6 +40,8 @@ function searchCity(city) {
     realFeelTemperature = data.main.feels_like;
     realFeelElement.innerHTML = Math.round(realFeelTemperature);
     iconElement.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    
+    
 
     let latitude = data.coord.lat;
     let longitude = data.coord.lon;
@@ -59,6 +61,32 @@ function searchCity(city) {
     fcDesc3.innerHTML = data.daily[2].weather[0].description;
     fcIcon3.src = `https://openweathermap.org/img/wn/${data.daily[2].weather[0].icon}@2x.png`;
   })
+   
+  //switch to change backgrounds
+  let gifs = data.weather[0].main;
+    switch(gifs) {
+      case "Clear": document.getElementById("wrapper-bg").style.backgroundImage =
+        "url('src/images/clear.gif')";
+      break;
+      case "Clouds": document.getElementById("wrapper-bg").style.backgroundImage =
+        "url('src/images/clouds.gif')";
+      break;
+      case "Drizzle": document.getElementById("wrapper-bg").style.backgroundImage =
+        "url('src/images/drizzle.gif')";
+      break;
+      case "Fog": document.getElementById("wrapper-bg").style.backgroundImage =
+        "url('src/images/fog.gif')";
+      break;
+      case "Rain": document.getElementById("wrapper-bg").style.backgroundImage =
+        "url('src/images/rain.gif')";
+      break;
+      case "Snow": document.getElementById("wrapper-bg").style.backgroundImage =
+        "url('src/images/snow.gif')";
+      break;
+      case "Thunderstorm": document.getElementById("wrapper-bg").style.backgroundImage =
+        "url('src/images/thunderstorm.gif')";
+      break;
+    }
   });
 }
 
@@ -155,6 +183,31 @@ function searchLocation(position) {
     fcTemp3.innerHTML = Math.round(forecastTemp3);
     fcDesc3.innerHTML = data.daily[2].weather[0].description;
     fcIcon3.src = `https://openweathermap.org/img/wn/${data.daily[2].weather[0].icon}@2x.png`;
+
+    let backs = data.current.weather[0].main;
+    switch(backs) {
+      case "Clear": document.getElementById("wrapper-bg").style.backgroundImage =
+        "url('src/images/clear.gif')";
+      break;
+      case "Clouds": document.getElementById("wrapper-bg").style.backgroundImage =
+        "url('src/images/clouds.gif')";
+      break;
+      case "Drizzle": document.getElementById("wrapper-bg").style.backgroundImage =
+        "url('src/images/drizzle.gif')";
+      break;
+      case "Fog": document.getElementById("wrapper-bg").style.backgroundImage =
+        "url('src/images/fog.gif')";
+      break;
+      case "Rain": document.getElementById("wrapper-bg").style.backgroundImage =
+        "url('src/images/rain.gif')";
+      break;
+      case "Snow": document.getElementById("wrapper-bg").style.backgroundImage =
+        "url('src/images/snow.gif')";
+      break;
+      case "Thunderstorm": document.getElementById("wrapper-bg").style.backgroundImage =
+        "url('src/images/thunderstorm.gif')";
+      break;
+    }
   })
 }
 

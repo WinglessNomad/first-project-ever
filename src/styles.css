@@ -1,10 +1,11 @@
 /*GENERAL STYLES*/
 :root {
   --main-bg-color: #f1f3f8;
-  --main-txt-color: #393b44;
+  --main-accent-color: #393b44;
+  --main-txt-color: rgb(196, 198, 199);
   box-sizing: border-box;
 }
-/*DON'T FORGET TO MAKE IT RESPONSIVE, IT WRAPS WEIRDLY*/
+
 body {
   color: var(--main-txt-color);
   font-family: "Gruppo", cursive;
@@ -13,10 +14,11 @@ body {
 }
 
 .container {
-  width: 450px;
+  width: 40vw;
   max-width: 100%;
   margin: 5px auto;
-  border: 1px solid var(--main-txt-color);
+  padding: 0;
+  border: 1px solid var(--main-accent-color);
   border-radius: 10px;
   background-color: var(--main-bg-color);
 }
@@ -35,10 +37,11 @@ nav {
 }
 #date {
   text-decoration: none;
-  color: var(--main-txt-color);
+  color: var(--main-accent-color);
   font-size: 1.5rem;
   pointer-events: none;
   text-align: right;
+  padding: 5px;
 }
 
 form {
@@ -68,6 +71,11 @@ form {
   grid-template-rows: repeat(1, 1fr);
   gap: 10px;
   place-content: center;
+  padding: 5px;
+  word-wrap: break-all;
+  text-overflow: ellipsis;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .current-city {
@@ -82,6 +90,7 @@ form {
   font-size: 3rem;
   font-family: "Chilanka", cursive;
   font-weight: bold;
+  color: var(--main-txt-color);
 }
 
 .current-description::first-letter {
@@ -113,6 +122,7 @@ form {
 
 #current-temp {
   font-size: 4rem;
+  color: var(--main-txt-color);
 }
 
 .celsius,
@@ -146,8 +156,11 @@ form {
   grid-template-rows: repeat(3, 1fr);
   gap: 10px;
   justify-content: space-around;
+  margin: 0 5px;
 }
-
+.forecast {
+  padding: 5px;
+}
 .forecast-box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -241,5 +254,5 @@ form {
 
 .cl {
   text-decoration: none;
-  color: var(--main-txt-color);
+  color: var(--main-accent-color);
 }

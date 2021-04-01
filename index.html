@@ -10,6 +10,10 @@
       integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
       crossorigin="anonymous"
     />
+    <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
+  rel="stylesheet"
+/>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Chilanka&family=Gruppo&family=Open+Sans&display=swap"
@@ -20,85 +24,98 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"
+></script>
     <link rel="stylesheet" href="src/styles.css" />
 
     <title>Weather App</title>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <nav class="navbar">
-          <div class="container-fluid">
-            <a class="navbar-brand"></a>
-            <h3 id="date"></h3>
-            <form class="d-flex" id="search-form">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Change location"
-                aria-label="Search"
-                id="search-engine"
-              />
-              <button class="btn" type="submit">
-                <i class="fas fa-globe" id="globe"></i>
-              </button>
-              <button class="btn" type="submit">
-                <i class="fas fa-map-pin" id="pin"></i>
-              </button>
-            </form>
-          </div>
-        </nav>
-      </header>
-      <main>
-        <div class="main">
-          <div class="current-city">
-            <div id="searched-city"><h1 class="city"></h1></div>
-            <div class="current-info">
-              <p class="current-description"></p>
-              <div class="real-feel">
-                Feels like:
-                <p class="feels-like"></p>
-              </div>
-              <div class="wind">
-                Wind speed:
-                <p class="wind-speed"></p>
+    
+<div class="container justify-content-center">
+  <div
+          id="wrapper-bg"
+          class="card bg-image shadow-4-strong"
+          style="background-image: url('src/images/rain.gif')"
+        >
+    <header>
+      <nav class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand"></a>
+          <h3 id="date"></h3>
+          <form class="d-flex" id="search-form">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Change location"
+              aria-label="Search"
+              id="search-engine"
+            />
+            <button class="btn" type="submit">
+              <i class="fas fa-globe" id="globe"></i>
+            </button>
+            <button class="btn" type="submit">
+              <i class="fas fa-map-pin" id="pin"></i>
+            </button>
+          </form>
+        </div>
+      </nav>
+    </header>
+    <main>
+          <div class="main">
+            <div class="current-city">
+              <div id="searched-city"><h1 class="city"></h1></div>
+              <div class="current-info">
+                <p class="current-description"></p>
+                <div class="real-feel">
+                  Feels like:
+                  <p class="feels-like"></p>
+                </div>
+                <div class="wind">
+                  Wind speed:
+                  <p class="wind-speed"></p>
+                </div>
               </div>
             </div>
+            <div class="current-weather">
+              <img src="" alt="weather icon" id="icon" />
+            </div>
+            <br />
+            <div class="current-t">
+              <a href="#" class="celsius">°C</a>
+              <a href="#" class="fahrenheit">°F</a>
+              <div><h2 id="current-temp"></h2></div>
+            </div>
           </div>
-          <div class="current-weather">
-            <img src="" alt="weather icon" id="icon" />
+          <div class="forecast">
+            <h3>Forecast</h3>
+            <p>Next three days:</p>
           </div>
-          <br />
-          <div class="current-t">
-            <a href="#" class="celsius">°C</a>
-            <a href="#" class="fahrenheit">°F</a>
-            <div><h2 id="current-temp"></h2></div>
+          <!--predicting the future-->
+          <div class="row align-items-center" id="future">
+            <div class="col forecast-box" id="forecast-1">
+              <h3 class="forecast-temp-1"></h3>
+              <img src="" alt="" class="forecast-icon-1" />
+              <p class="forecast-description-1"></p>
+            </div>
+            <div class="col forecast-box" id="forecast-2">
+              <h3 class="forecast-temp-2"></h3>
+              <img src="" alt="" class="forecast-icon-2" />
+              <p class="forecast-description-2"></p>
+            </div>
+            <div class="col forecast-box" id="forecast-3">
+              <h3 class="forecast-temp-3"></h3>
+              <img src="" alt="" class="forecast-icon-3" />
+              <p class="forecast-description-3"></p>
+            </div>
           </div>
-        </div>
-        <div class="forecast">
-          <h3>Forecast</h3>
-          <p>Next three days:</p>
-        </div>
-        <!--predicting the future-->
-        <div class="row align-items-center" id="future">
-          <div class="col forecast-box" id="forecast-1">
-            <h3 class="forecast-temp-1"></h3>
-            <img src="" alt="" class="forecast-icon-1" />
-            <p class="forecast-description-1"></p>
-          </div>
-          <div class="col forecast-box" id="forecast-2">
-            <h3 class="forecast-temp-2"></h3>
-            <img src="" alt="" class="forecast-icon-2" />
-            <p class="forecast-description-2"></p>
-          </div>
-          <div class="col forecast-box" id="forecast-3">
-            <h3 class="forecast-temp-3"></h3>
-            <img src="" alt="" class="forecast-icon-3" />
-            <p class="forecast-description-3"></p>
-          </div>
-        </div>
-      </main>
+        
+      </div>
     </div>
+    </main>
+
     <footer>
       <div class="code-link">
         <p>
@@ -116,6 +133,8 @@
         </p>
       </div>
     </footer>
+  
+</div>
     <script src="src/index.js"></script>
   </body>
 </html>
